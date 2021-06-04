@@ -1,7 +1,7 @@
 <html>
 <head>Checkout</head>
 
-<link rel="stylesheet" type="text/css" href="checkout.css">
+<link rel="stylesheet" type="text/css" href="css/checkout.css">
 <body>
 <div class="wrapper">
   <div class="container">
