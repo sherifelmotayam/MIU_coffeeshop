@@ -7,7 +7,7 @@ require_once("classes.php");
 <html>
 <style>
 	*{
-		/*background-color: #F72323;*/
+		
 	}
 	.main{
 		position: relative;
