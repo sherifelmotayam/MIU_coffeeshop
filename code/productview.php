@@ -24,12 +24,6 @@
 										<div class="col">
 											<h2>Herbalism</h2>
 										</div>
-										<div class="col text-right">
-											<a href="#">
-												<i class="fa fa-heart-o">
-												</i>
-											</a>
-										</div>
 									</div>
 									<!--									ektb el details hena-->
 									<p>Natural herbal wash</p> 
