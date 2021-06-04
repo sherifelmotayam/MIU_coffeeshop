@@ -11,54 +11,55 @@ if (!$conn) {
 <head>
 <style>
 
-fieldset {
-
-overflow: hidden
+body
+{
+	
+	background-color:#c1c1c1;
+}
+.form123
+{
+font-size: 15;
+font-family: "Times New Roman", Times, serif;
+margin-top:  150px;
+margin-left: 850px;
+line-height: 1.6;
 
 }
-
-.some-class {
-
-float: left;
-
-clear: none;
-
+.form123  input[type=submit] {
+  background-color:red;
+  margin-left: 950px;
+	border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-label {
+.form input[type=number]
+{
 
-float: left;
-
-clear: none;
-
-display: block;
-background-color: red;
-color:green;
-padding: 2px 1em 0 0;
-
+background-color:#c1c1c1;
+margin-left: 950px;
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
 }
-
-input[type=radio],
-
-input.radio {
-
-background-color: red;
-float: left;
-
-clear: none;
-
-margin: 2px 0 0 2px;
 
 }
 </style>
 </head>
 
 <body>
-
+	<div class="form123">
 <form method="post" action="viewproduct.php">
   <?php
-  echo "<h3>choose your size <h3>";
+                echo "<img src = 'images/1.jpg' style = 'border-radius: 5%; width: 160px; height: 160px; margin-top: -5px; margin-left: 800px; padding-top: 0px; margin-buttom:200px;'>";
 
+    echo "<h3>choose your size <h3>";
 $query1="SELECT `id` ,`SizeName` FROM `size` ";
 $result = $conn->query($query1);
 if ($result->num_rows > 0) {
@@ -66,12 +67,13 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     $id=$row["id"];
     $name=$row["SizeName"];
-   echo "<input type='radio' value='$id' name='staff'> $name<br />";
+		echo   "<label for='A' ><input type='radio' class=test value='$id' name='staff2'> $name<br />";
 
   }
 } else {
   echo "0 results";
 }
+
 echo "<h3>choose your milk <h3>";
 $query2="SELECT `id` ,`Type` FROM `milk_type` ";
 $result2 = $conn->query($query2);
@@ -80,7 +82,7 @@ if ($result2->num_rows > 0) {
   while($row2 = $result2->fetch_assoc()) {
      $id2=$row2["id"];
     $Typename=$row2["Type"];
-   echo "<input type='radio' value='$id2' name='staff2'> $Typename<br />";
+   echo "<label for='B' ><input type='radio' value='$id2' name='staff2'> $Typename<br />";
 
   }
 } else {
@@ -97,7 +99,7 @@ if ($result3->num_rows > 0) {
     $id3=$row3["Id"];
 
     $FlavorName=$row3["FlavorName"];
-   echo "<input type='radio' value='$id3' name='staff3'> $FlavorName<br />";
+   echo "<label for='C' ><input type='radio' value='$id3' name='staff3'> $FlavorName<br />";
 
   }
 } else {
@@ -122,7 +124,7 @@ if ($result4->num_rows > 0) {
     $beverages=$row4["DrinkType"];
 
 
-	 echo " <label for='A'> <input  type='radio'  value='$id4' name='staff4'>  $beverages <br />";
+	 echo " <label for='D' > <input  type='radio'  value='$id4' name='staff4'>  $beverages <br />";
   }
 } else {
   echo "0 results";
@@ -130,12 +132,16 @@ if ($result4->num_rows > 0) {
 
 
 
-
  ?>
- <input type="submit" value="Submit" >
+<br>
+<input type="number" name="quantity"placeholder="quantity">
+
+ <br>
+<br>
+ <input type="submit" value="add to card" >
 
 </form>
-
+</div>
 
 </body>
 
