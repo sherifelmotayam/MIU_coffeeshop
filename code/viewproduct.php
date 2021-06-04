@@ -110,39 +110,3 @@ if ($result3->num_rows > 0) {
 
 
 
-?>
-<?php
-echo "<h3>choose your beverages <h3>";
-$query4="SELECT `DrinkId`, `DrinkType` FROM `beverages` ";
-$result4 = $conn->query($query4);
-if ($result4->num_rows > 0) {
-  // output data of each row
-  while($row4 = $result4->fetch_assoc()) {
-
-    $id4=$row4["DrinkId"];
-
-    $beverages=$row4["DrinkType"];
-
-
-	 echo " <label for='D' > <input  type='radio'  value='$id4' name='staff4'>  $beverages <br />";
-  }
-} else {
-  echo "0 results";
-}
-
-
-
- ?>
-<br>
-<input type="number" name="quantity"placeholder="quantity">
-
- <br>
-<br>
- <input type="submit" value="add to card" >
-
-</form>
-</div>
-
-</body>
-
-</html>
